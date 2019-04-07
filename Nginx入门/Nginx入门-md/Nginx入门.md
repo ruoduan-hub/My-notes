@@ -293,3 +293,52 @@ node --inspect-brk  14_debug.js
 
 - 条件调试 具体 看ide  的介绍教程，这里不多做赘述了
 
+
+
+---
+
+### 三、基础API
+
+#### 1.path
+
+路径受系统环境的影响 windows 于 posix  ——例如 我们想去一个路径的文件名
+
+POSIX上
+
+```shell
+path.basename('c:\\tem\myfile.html')
+//返回 c:\\tem\myfile.html
+```
+
+Windows 
+
+```shell
+path.basename('c:\\tem\myfile.html')
+//返回 myfile.html  ——正确式例
+```
+
+想要一致结果
+
+```sh
+path.win32.basename('c:\\tem\myfile.html')
+```
+
+
+
+# API 后期补充
+
+
+
+### .gitigonre
+
+
+
+- 匹配模式前/代表项目根目录 
+
+- 匹配模式后/ 代表是目录
+
+- 匹配模式前 ！/ 代表取反 【不忽略】
+
+- `*` 代表任意个字符
+
+  
