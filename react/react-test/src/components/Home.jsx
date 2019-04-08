@@ -4,6 +4,7 @@ import Footer from './Footer'
 import DefaultFooter from './DefaultFooter.jsx'
 import { isNumber } from 'util';
 import AxiosList from './AxiosList'
+import LifrCycle from './LifrCycle'
 
 export default class Home extends Component {
 
@@ -17,7 +18,8 @@ export default class Home extends Component {
             style:{
                 color: 'red',
                 fontSize: '26px'
-            }
+            },
+            flag: true,
         }
 
     }
@@ -38,6 +40,12 @@ export default class Home extends Component {
     getFooter = () => {
         let data = this.refs.fooder.state.msg;
         alert(data)
+    }
+
+    setFlag = () =>{
+        this.setState({
+            flag: !this.state.flag
+        })
     }
 
   render() {
@@ -62,7 +70,14 @@ export default class Home extends Component {
 
         {/* <DefaultFooter title={this.state.msg} num= { parseInt(123) } /> */}
 
-        <AxiosList />
+        {/* <AxiosList /> */}
+        
+
+        {
+            this.state.flag?<LifrCycle />:""
+        }
+        <br />
+        <button onClick={this.setFlag}>Ifshow</button>
         
     </div>
     )
