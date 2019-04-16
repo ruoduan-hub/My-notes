@@ -1,33 +1,31 @@
-.App {
-  text-align: center;
-}
+@charset "UTF-8";
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
+html {
+  font-size: 62.5%;
+  /* 根元素是10px;     16*62.5%=10  默认在pc端根元素会解析成12px    */ }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+body {
+  font: 12px/1.5 'Microsoft YaHei','宋体', Tahoma, Arial, sans-serif;
+  color: #555;
+  background-color: #F7F7F7; }
 
-.App-link {
-  color: #61dafb;
-}
+em, i {
+  font-style: normal; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ul, li {
+  list-style-type: none; }
+
+strong {
+  font-weight: normal; }
+
+.clearfix:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both; }
+
+/*# sourceMappingURL=basic.css.map */

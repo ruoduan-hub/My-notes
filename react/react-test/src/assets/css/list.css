@@ -1,0 +1,32 @@
+/*列表*/
+.item .item_cate {
+    text-align: center;
+    padding: .5rem; }
+  .item .item_list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px .5rem; }
+    .item .item_list li {
+      width: 33.3%;
+      padding: .5rem;
+      box-sizing: border-box; }
+      .item .item_list li a {
+          text-decoration: none;
+          color: '#666'
+      }
+      .item .item_list li .inner {
+        background: #fff;
+        width: 100%;
+        border-radius: .5rem;
+        overflow: hidden; }
+        .item .item_list li .inner img {
+          width: 100%; }
+        .item .item_list li .inner p {
+          padding: .2rem .5rem; }
+        .item .item_list li .inner .title {
+          font-weight: bold; }
+
+          .price{
+              color: red;
+              font-weight: 700;
+          }
