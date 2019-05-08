@@ -9,4 +9,4 @@
 4. 我做的react-redux简单易懂的教程
 5. typescript的学习笔记
 6. winter 的重学前端课程（待更新，持续更新）
-7. ContOS 下部署Nginx使用git实现自动化部署Hexo
+7. ContOS 下部署Nginx使用Git实现自动化部署Hexo
