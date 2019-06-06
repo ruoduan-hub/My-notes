@@ -1,4 +1,4 @@
-### 安装 MinGW
+## 安装 MinGW
 
 [MinGW](http://www.mingw.org/)
 
