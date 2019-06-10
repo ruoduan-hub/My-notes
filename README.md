@@ -1,6 +1,6 @@
 #  My studyNotes
 
-#### 目录
+### 目录
 
 1. 前端的一些基础知识
 2. nginx的基本使用和部署
@@ -11,3 +11,4 @@
 7. ContOS 下部署Nginx使用Git实现自动化部署Hexo
 8. C 的基础环境配置
 9. 收集的一份React-Native学习指南
+
