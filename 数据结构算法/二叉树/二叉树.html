@@ -44,6 +44,7 @@
                 }
             }
 
+            //中序遍历
             var inOrderTraverseNode = function (node, callback) {
                 if (node !== null) {
                         inOrderTraverseNode(node.left, callback)
@@ -51,7 +52,7 @@
                         inOrderTraverseNode(node.right, callback)
                     }
             }
-
+            //中序遍历
             this.inOrderTraverse = (callback) =>{
                     inOrderTraverseNode(root, callback)
                 }
@@ -63,7 +64,7 @@
         nodes.forEach(function (key) {
             BinaryTree.insert(key)
         })
-
+        //中序遍历
         BinaryTree.inOrderTraverse(key => {console.log(key)})
     </script>
 </body>
