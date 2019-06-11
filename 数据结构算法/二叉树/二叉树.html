@@ -44,6 +44,18 @@
                 }
             }
 
+            var inOrderTraverseNode = function (node, callback) {
+                if (node !== null) {
+                        inOrderTraverseNode(node.left, callback)
+                        callback(node.key)
+                        inOrderTraverseNode(node.right, callback)
+                    }
+            }
+
+            this.inOrderTraverse = (callback) =>{
+                    inOrderTraverseNode(root, callback)
+                }
+
         }
 
         var nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13]
@@ -51,6 +63,8 @@
         nodes.forEach(function (key) {
             BinaryTree.insert(key)
         })
+
+        BinaryTree.inOrderTraverse(key => {console.log(key)})
     </script>
 </body>
 
