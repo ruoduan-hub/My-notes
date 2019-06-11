@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二叉树实现(一)</title>
+</head>
+<body>
+    <script>
+          function BinaryTree () {
+                //创建对象
+                class Node {
+                    constructor (key) {
+                        this.key = key
+                        this.left = null
+                        this.right = null
+                    }
+                }
+                //初始化root
+                let root = null
+                
+                const  insterNode =  (node, newNode) => {
+                    if (newNode.key < node.key) {//新节点小于根节点的情况
+                        if (newNode.left === null ) {
+                            newNode.left = newNode
+                        } else {
+                            insterNode(newNode.left, newNode)
+                        }
+                    } else { //新节点大于的情况
+                        if (newNode.right === null) {
+                            newNode.right = newNode
+                        } else {
+                            insterNode (newNode.right, nweNode)
+                        }
+                    }
+                }
+
+                this.insert = (item) =>{
+                    let newNode = new Node(item)
+                    if (root === null) {//判断是否有根节点
+                        root = newNode
+                    } else {
+                        insterNode(root, newNode)//调用二叉处理方法
+                    }
+                }
+
+                const inOrderTraverseNode = (node, callback) => {
+                    if (node !== null) {
+                        inOrderTraverseNode(node.left, callback)
+                        callback(node.key)
+                        inOrderTraverseNode(node.right, callback)
+                    }
+                }
+
+                this.inOrderTraverse = (callback) =>{
+                    inOrderTraverseNode(root, callback)
+                }
+
+            }
+
+            let nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13]
+            //创建一个节点对象
+            var BinaryTree = new BinaryTree()
+            nodes.forEach(function (key) {
+                BinaryTree.insert(key)
+            })
+
+            const callback = (key) => {
+                console.log(key)
+            }
+    </script>
+</body>
+</html>
