@@ -56,10 +56,42 @@
                     }
                 }
 
-                //中序排序
-                this.inOrderTraverse = (callback) =>{
-                    inOrderTraverseNode(root, callback)
+              
+
+                //前序遍历
+                const preOrderTraverseNode = (node, callback) => {
+                    if (node !== null) {
+                        callback(node.key)
+                        preOrderTraverseNode(node.left, callback)
+                        preOrderTraverseNode(node.right, callback)
+                    }
                 }
+
+                
+
+                //后序遍历
+                const postOrderTraverseNode = (node, callback) => {
+                    if (node !== null) {
+                        postOrderTraverseNode(node.left, callback)
+                        postOrderTraverseNode(node.right, callback)
+                        callback(node.key)
+                    }
+                }
+
+               
+
+                this.allOrderTraverse = (callback, FuncName) => {//入口函数
+                    switch (FuncName) {
+                        case 'inOrderTraverseNode': inOrderTraverseNode(root, callback)
+                            break
+                        case 'preOrderTraverseNode': preOrderTraverseNode(root, callback)
+                            break
+                        case 'postOrderTraverseNode' : postOrderTraverseNode (root, callback)
+                            break
+                        default: alert('输入错误,请输入：inOrderTraverseNode，preOrderTraverseNode，postOrderTraverseNode 中的一种 ') 
+                        break;
+                    }
+                }             
 
             }
 
@@ -69,9 +101,7 @@
             nodes.forEach(function (key) {
                 BinaryTree.insert(key)
             })
-
-            BinaryTree.inOrderTraverse(key => {console.log(key)})
-        
+            BinaryTree.allOrderTraverse(key => {console.log(key)}, 'postOrderTraverseNode')
             
             
     </script>
