@@ -20,31 +20,34 @@
                 //初始化root
                 let root = null
                 
-                const  insterNode =  (node, newNode) => {
-                    if (newNode.key < node.key) {//新节点小于根节点的情况
-                        if (newNode.left === null ) {
-                            newNode.left = newNode
+                const  insertNode =  (node, newNode) => {
+                        if (newNode.key < node.key) {
+                        if (node.left === null) {
+                            node.left = newNode
                         } else {
-                            insterNode(newNode.left, newNode)
+                            insertNode(node.left, newNode)
                         }
-                    } else { //新节点大于的情况
-                        if (newNode.right === null) {
-                            newNode.right = newNode
+                    } else {
+                        if (node.right === null) {
+                            node.right = newNode
                         } else {
-                            insterNode (newNode.right, nweNode)
+                            insertNode(node.right, newNode)
                         }
                     }
                 }
 
+
+                    
                 this.insert = (item) =>{
                     let newNode = new Node(item)
                     if (root === null) {//判断是否有根节点
                         root = newNode
                     } else {
-                        insterNode(root, newNode)//调用二叉处理方法
+                        insertNode(root, newNode)//调用二叉处理方法
                     }
                 }
 
+                //中序排序
                 const inOrderTraverseNode = (node, callback) => {
                     if (node !== null) {
                         inOrderTraverseNode(node.left, callback)
@@ -53,6 +56,7 @@
                     }
                 }
 
+                //中序排序
                 this.inOrderTraverse = (callback) =>{
                     inOrderTraverseNode(root, callback)
                 }
@@ -60,15 +64,17 @@
             }
 
             let nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13]
-            //创建一个节点对象
+
             var BinaryTree = new BinaryTree()
             nodes.forEach(function (key) {
                 BinaryTree.insert(key)
             })
 
             BinaryTree.inOrderTraverse(key => {console.log(key)})
+        
             
             
     </script>
 </body>
 </html>
+

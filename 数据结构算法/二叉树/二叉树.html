@@ -16,7 +16,7 @@
                 this.left = null
                 this.right = null
             }
-
+          
             var root = null
 
             var insertNode = function (node, newNode) {
@@ -34,6 +34,8 @@
                     }
                 }
             }
+
+            
 
             this.insert = function (key) {
                 var newNode = new Node(key)
@@ -63,9 +65,12 @@
         var BinaryTree = new BinaryTree()
         nodes.forEach(function (key) {
             BinaryTree.insert(key)
+            console.log(BinaryTree)
         })
         //中序遍历
         BinaryTree.inOrderTraverse(key => {console.log(key)})
+
+
     </script>
 </body>
 
