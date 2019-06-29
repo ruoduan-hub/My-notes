@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/localforage/1.7.3/localforage.js"></script>
+    <title>localForage</title>
+</head>
+<body>
+    <button id="btn">reomve some</button>
+    <button id="btn2">add some</button>
+    <script>
+      document.querySelector('#btn').onclick = function () {
+        localforage.removeItem('somekey').then(function() {
+        // 当值被移除后，此处代码运行
+        console.log('Key is cleared!');
+        }).catch(function(err) {
+        // 当出错时，此处代码运行
+        console.log(err);
+        });
+      };
+
+      document.querySelector('#btn2').onclick = function () {
+        localforage.setItem('somekey', 'some value').then(function (value) {
+        // 当值被存储后，可执行其他操作
+        console.log(value);
+        }).catch(function(err) {
+        // 当出错时，此处代码运行
+        console.log(err);
+        });
+      }
+    </script>
+</body>
+</html>
