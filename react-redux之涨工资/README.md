@@ -4,3 +4,8 @@
 
 `yarn start` 启动
 
+
+
+---
+
+add React——Suspense，lazy 
