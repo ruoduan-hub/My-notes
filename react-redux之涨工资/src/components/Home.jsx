@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { connect } from 'react-redux'
 import Counter from './Counter '
+
+
+const OtherComponent = React.lazy(() => import('./OtherComponent'));
+const TowComponent = React.lazy(() => import('./TowComponent'))
 
 class Home extends React.Component {
     constructor (props, context){
@@ -18,14 +22,18 @@ class Home extends React.Component {
     render() {
     
         return (
-            <div>
+            <>
                 <hr /> <br />
                 <h1>home 组件</h1>
                 <button onClick= {this.mycl}>打印目前工资</button>
                 <hr /> <br />
                 <Counter />
-                
-            </div>
+              
+                <Suspense fallback={<div>Loading...</div>}>
+                    <OtherComponent />
+                    <TowComponent />
+                </Suspense>
+            </>
         );
     }
 
