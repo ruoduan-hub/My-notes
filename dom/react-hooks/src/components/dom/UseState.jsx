@@ -7,18 +7,20 @@ export default function UseState () {
             name: '张三',
             sex: '0'
         }
-    ]);
+    ])
     const addname = () => {
-        setObj(obj.push({
-            name: '李四',
-            sex: '1'
-        }))
-        console.log(obj)
+        setObj([
+            ...obj,
+            {
+                name:'阿萨德',
+                sex: 0
+            }
+        ])
     }
 
     useEffect(() => {
         
-    })
+    });
 
     return (
         <>

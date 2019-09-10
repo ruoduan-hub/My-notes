@@ -1,5 +1,7 @@
 import React from 'react';
 
+var Myname = 111
+
 class List extends React.Component {
     constructor(props) {
         super(props);
@@ -7,6 +9,10 @@ class List extends React.Component {
             username: '',
             myid: 123
          };
+    }
+    handlerName = () => {
+        Myname = this.refs.Myname.value
+        alert(Myname)
     }
 
     inputChange = () =>{
@@ -42,7 +48,8 @@ class List extends React.Component {
                 {/* 非约束性组件，不绑定react 直接获取dom 需要用defaultValue */}
                 <input defaultValue={this.state.myid} type="text" name="" id=""/>
 
-
+                <input ref="Myname" type="text" onChange={this.handlerName} />
+                <div>{Myname}</div>
             </div>
         );
     }
