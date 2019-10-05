@@ -1,4 +1,4 @@
-#  My studyNotes
+#  :notebook: ​My studyNotes
 
 ### 目录
 
@@ -16,3 +16,4 @@
 >9. C 的基础环境配置
 >10. 收集的一份React-Native学习指南
 >11. 算法和数据结构
+
