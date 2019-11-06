@@ -1,6 +1,6 @@
 #  :notebook: ​My studyNotes
 
-### :cd: ​目录
+### :cd: ​序
 
 
 >1. 前端的一些基础知识

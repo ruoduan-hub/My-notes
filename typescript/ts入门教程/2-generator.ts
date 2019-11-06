@@ -5,12 +5,12 @@ function* generatorGet(stock: any) {
 }
 
 var res = generatorGet('alibaba')
-var myStock = 35;
-var price = 100;
+var myStock: any = 35;
+var price: any = 100;
 
 while (price > myStock) { //一直循环，
     price = res.next().value;
-    console.log(`价格小于35returnreturn ${price}`);
+    console.log(`价格小于35return ${price}`);
 }
 
 console.log(`whole -- ${price}`)
